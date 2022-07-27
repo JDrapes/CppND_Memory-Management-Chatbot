@@ -65,8 +65,9 @@ ChatBot &ChatBot::operator=(const ChatBot &source){
         return *this;
     }
     //Perform copy assignment
-    delete _image;
-    _image = new wxBitmap(*source._image);
+    _image =  new wxBitmap();
+    *_image = *source._image;
+    
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
