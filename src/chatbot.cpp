@@ -52,7 +52,8 @@ ChatBot::ChatBot(const ChatBot &source){
     //Perform copy operations
     //Because its unique ptr we should deep copy or convert to a shared ptr
     _currentNode = source._currentNode;
-    _image = source._image;
+    _image =  new wxBitmap();
+    *_image = *source._image;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _chatLogic->SetChatbotHandle(this);
